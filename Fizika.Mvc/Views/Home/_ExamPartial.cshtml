@@ -1,0 +1,53 @@
+﻿@model Fizika.Mvc.Models.HomeViewModel
+
+    <section class="courses_area pt-120 pb-130">
+
+        <img class="shape-1" src="~/fiziknihad/assets/images/shape/shape-1.png" alt="shape">
+        <img class="shape-2" src="~/fiziknihad/assets/images/shape/shape-2.png" alt="shape">
+        <img class="shape-3" src="~/fiziknihad/assets/images/shape/shape-3.png" alt="shape">
+        <img class="shape-4" src="~/fiziknihad/assets/images/shape/shape-4.png" alt="shape">
+        <img class="shape-5" src="~/fiziknihad/assets/images/shape/shape-5.png" alt="shape">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center pb-20">
+                        <h3 class="main_title">Fizika Sınaq Testləri</h3>
+                        <p>Bu sınaqlarda siz fizika sualları ilə tanış olmaqla yanaşı test işləmə qabiliyyətinizi də təkmilləşdirmiş olacaqsınız. Belə ki sınaqlar qəbul və ya qəbul tipli olmaqla çətinlik çəkdiyiniz hissələri meydana çıxaracaqdır.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.ExamListDto.Exams)
+                {
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_courses courses_gray mt-30">
+                            <div class="courses_image">
+                                <img src="~/fiziknihad/assets/images/pdf23.png" alt="@item.ExamName">
+                            </div>
+                            <div class="courses_content">
+                                <ul class="tag">
+                                    <li><a class="color-1" asp-action="Index" asp-controller="Exam" asp-route-examId="@item.ExamCategoryId">@item.Examcategory.Name</a></li>
+                                </ul>
+                                <div class="courses_author d-flex">
+                                    <div class="author_image">
+                                        <img width="30" src="~/fiziknihad/assets/images/fiziknihadlogo.png" alt="Fizikadim logo">
+                                    </div>
+                                    <div class="author_name media-body">
+                                        <a href="#" style="cursor:unset">Nihad Şahbazov</a>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a asp-action="Detail" asp-controller="Exam" asp-route-examId="@item.Id">@item.ExamName </a></h4>
+                                <div class="meta d-flex justify-content-between">
+                                    <ul>
+                                        <li><a asp-action="Detail" asp-controller="Exam" asp-route-examId="@item.Id"><i class="fa fa-download"></i> @item.DownloadCount</a></li>
+                                    </ul>
+                                    <span>Yüklə</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>

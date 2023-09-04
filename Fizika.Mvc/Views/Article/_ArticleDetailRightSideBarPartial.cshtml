@@ -1,0 +1,55 @@
+﻿@model Fizika.Mvc.Models.ArticleDetailRightSideBarViewModel
+@using Fizika.Mvc.Extensions
+
+<div class="sidebar mt-50">
+    <div class="sidebar_search">
+        <form role="search" method="get" class="search-form" asp-controller="Article" asp-action="Search">
+            <input type="text" placeholder="Axtarış">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="sidebar_post mt-30">
+        <h5 class="sidebar_title">Populyar bloqlar</h5>
+        <ul>
+            @foreach (var item in Model.ArticleListDto.Articles)
+            {
+                <li>
+                    <div class="single_sidebar_post d-flex mt-30">
+                        <div class="post_image">
+                            <img src="~/img/@item.ThumbNail" alt="@item.Title">
+                        </div>
+                        <div class="post_content media-body">
+                            <h6 class="title"><a href="#">@item.Title</a></h6>
+                            <p class="date">@item.Date.ToShortDateString()</p>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="sidebar_list mt-30">
+        <h5 class="sidebar_title">Kateqoriyalar</h5>
+
+        <ul class="archives_list">
+            @foreach (var item in Model.Categories.Categories)
+            {
+                <li><a asp-action="Index" asp-controller="Article" asp-route-categoryId="@item.Id"><i class="fa fa-angle-right"></i>@item.Name</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="sidebar_tag mt-30">
+        <h5 class="sidebar_title">Etiketlər</h5>
+
+        <ul class="archives_tag">
+            <li><a href="#">Fizika</a></li>
+            <li><a href="#">Nihad Şahbazov</a></li>
+            <li><a href="#">Ən Yaxşı Fizika Müəllimi</a></li>
+            <li><a href="#">Fizik Nihad Şahbazov</a></li>
+            <li><a href="#">Fizika Müəllimi</a></li>
+            <li><a href="#">Faydalı Məlumatlar</a></li>
+        </ul>
+    </div>
+</div>

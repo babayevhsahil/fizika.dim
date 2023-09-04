@@ -1,0 +1,112 @@
+﻿@model Fizika.Mvc.Models.ArticleDetailViewModel
+@using Fizika.Entities.DTOs
+@using Fizika.Mvc.Extensions
+@{ Layout = "_ArticleLayout";
+    ViewBag.Title = Model.ArticleDto.Article.Title;
+    ViewBag.Description = Model.ArticleDto.Article.SeoDescription;
+    ViewBag.Author = Model.ArticleDto.Article.SeoAuthor;
+    ViewBag.Tags = Model.ArticleDto.Article.SeoTags;
+    var listTag = ViewBag.listTags;
+    ViewBag.image = Model.ArticleDto.Article.ThumbNail;
+    string link = $"/Bloq/{Url.FriendlyUrlHelper(Model.ArticleDto.Article.Title).ToLower().ToString()}/{Model.ArticleDto.Article.Id}";
+    ViewBag.seolink = link;
+    ViewBag.datetime = Model.ArticleDto.Article.CreatedDate;
+    ViewBag.modifiedtime = Model.ArticleDto.Article.ModifiedDate; }
+
+<!--====== Page Banner PART START ======-->
+
+<section class="page_banner bg_cover" style="background-image: url(assets/images/about_bg.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner_content text-center">
+                    <h1 class="title">@Model.ArticleDto.Article.Title</h1>
+                    <ul class="breadcrumb justify-content-center">
+                        <li><a href="/">Ana Səhifə</a></li>
+                        <li><a class="active" href="#">Ətraflı</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Page Banner PART ENDS ======-->
+<!--====== Blog List Page PART START ======-->
+
+<section class="blog_details_page pt-80 pb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog_details mt-50">
+                    <div class="details_image">
+                        <img src="~/img/@Model.ArticleDto.Article.ThumbNail" alt="@Model.ArticleDto.Article.Title">
+                    </div>
+                    <div class="details_content">
+                        <span class="date"><span></span>  @Model.ArticleDto.Article.Date.ToShortDateString()</span>
+
+                        <div class="blog_content_wrapper">
+                            <ul class="blog_meta">
+                                <li><a href="/haqqimda">Nihad Şahbazov</a></li>
+                                <li><a href="#">@Model.ArticleDto.Article.Date.ToShortDateString()</a></li>
+                            </ul>
+                            <h2 class="blog_title">@Model.ArticleDto.Article.Title</h2>
+                        </div>
+                    </div>
+                    <p>@Html.Raw(Model.ArticleDto.Article.Content)</p>
+                </div>
+                <div class="blog_details_share d-flex">
+                    <span>Etiketlər :</span>
+                    <ul class="social">
+                        @foreach (var item in listTag)
+                        {
+            <li><a href="#" rel="@item">@item</a></li>}
+                    </ul>
+                </div>
+                <div class="blog_details_comment">
+                    <div class="blog_comment_items">
+                        <h4 class="blog_details_comment_title">Şərhlər</h4>
+                        <ul>
+                            @foreach (var comment in Model.ArticleDto.Article.Comments.Where(x => x.IsActive == true))
+                            {
+                <li>
+                    <div class="single_comment d-sm-flex">
+                        <div class="comment_author">
+                            <img src="~/fiziknihad/assets/images/author-4.jpg" alt="Author">
+                        </div>
+                        <div class="comment_content media-body">
+                            <h5 class="author_name">@comment.CreatedByName</h5>
+                            <p>
+                                @comment.Text
+                            </p>
+                            <ul class="commtent_meta">
+                                <li><a href="#"><i class="fa fa-clock-o"></i> @comment.CreatedDate.ToShortDateString()</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+}
+                        </ul>
+                    </div>
+                    <div class="blog_comment_form mt-45">
+                        <h4 class="blog_details_comment_title pb-15">Fikir Bildir</h4>
+                        <partial name="~/Views/Comment/_CommentAddPartial.cshtml" model="new CommentAddDto {ArticleId=Model.ArticleDto.Article.Id}" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <partial name="_ArticleDetailRightSideBarPartial" model="@Model.ArticleDetailRightSideBarViewModel" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Blog List Page PART ENDS ======-->
+
+@section Scripts{
+    <script src="~/fiziknihad/assets/js/articleDetail.js"></script>
+}
+<script>
+    var dot = @Model.ArticleDto.Article.SeoDescription;
+    document.write(dot.split(/[,.]/))
+</script>

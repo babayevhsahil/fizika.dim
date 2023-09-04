@@ -1,0 +1,38 @@
+﻿@model Fizika.Mvc.Models.HomeViewModel
+<section class="blog_area pt-60 pb-10">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_title text-center pb-20">
+                    <h3 class="main_title">Videolar</h3>
+                    <p>Nihad müəllim Şahbazovun çəkdiyi videolar ilə siz tədrisinizdə istifadə edəbiləcəyiniz faydalı məlumatlar öyrənəcəksiniz</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach (var video in Model.VideoListDto.Videos)
+            {
+                <div class="col-lg-4 col-md-7">
+                    <div class="single_blog mt-30">
+                        <div class="blog_image">
+                            <img style="width:350px;height:200px;object-fit:cover;" src="~/img/@video.Thumbnail">
+                        </div>
+                        <div class="blog_content">
+                            <div class="video d-flex justify-content-center align-items-center" style="position:relative;top:-22px;">
+                                <button type="button" class="video-btn video_play" data-toggle="modal" data-src="@video.Link" data-target="#myModal">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="blog_content_wrapper">
+                                <h4 class="blog_title"><a id="@video.Id" style="cursor:unset">@video.Title</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+@*@section Scripts{
+    <script src="~/fiziknihad/assets/js/youtube.js"></script>
+}*@

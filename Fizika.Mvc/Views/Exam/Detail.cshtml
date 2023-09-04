@@ -1,0 +1,146 @@
+﻿@model Fizika.Mvc.Models.ExamDetailViewModel
+@using Fizika.Entities.DTOs
+@using Fizika.Mvc.Extensions
+@{ Layout = "_ExamLayout";
+    ViewBag.Title = Model.ExamDto.Exam.ExamName;
+    ViewBag.Description = Model.ExamDto.Exam.ExamName + Model.ExamDto.Exam.Teacher;
+    ViewBag.Author = Model.ExamDto.Exam.Teacher;
+    ViewBag.Tags = Model.ExamDto.Exam.ExamYear;
+    var listTag = ViewBag.listTags;
+    string jpg = "/fiziknihad/assets/images/pdf23.png";
+    ViewBag.image = jpg;
+    string link = $"/Bloq/{Url.FriendlyUrlHelper(Model.ExamDto.Exam.ExamName).ToLower().ToString()}/{Model.ExamDto.Exam.Id}";
+    ViewBag.seolink = link;
+    ViewBag.datetime = Model.ExamDto.Exam.CreatedDate;
+    ViewBag.modifiedtime = Model.ExamDto.Exam.ModifiedDate; }
+<!--====== Courses Details Banner PART START ======-->
+
+<section class="courses_details_banner bg_cover" style="background-image: url(assets/images/about_bg.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-9 col-sm-11">
+                <div class="details_banner_content">
+                    <h4 class="title">@Model.ExamDto.Exam.ExamName</h4>
+
+                    <div class="details_media_wrapper d-flex flex-wrap">
+                        <div class="details_media d-flex align-items-center mt-30">
+                            <div class="media_image">
+                                <img class="author" src="~/fiziknihad/assets/images/fiziknihadlogo.png" alt="Fizikadim logo">
+                            </div>
+                            <div class="media_content media-body">
+                                <p>Müəllim</p>
+                                <h6 class="title">Nihad Şahbazov</h6>
+                            </div>
+                        </div>
+                        <div class="details_media d-flex align-items-center mt-30">
+                            <div class="media_image">
+                                <img class="bookmark" src="~/fiziknihad/assets/images/bookmark.png" alt="bookmark">
+                            </div>
+                            <div class="media_content media-body">
+                                <p>Kateqoriya</p>
+                                <h6 class="title"><a href="#">@Model.ExamDto.Exam.Examcategory.Name</a></h6>
+                            </div>
+                        </div>
+                        <div class="details_media d-flex align-items-center mt-30">
+                            <div class="media_image">
+                                <i class="fa fa-download"></i>
+                            </div>
+                            <div class="media_content">
+                                <p>Yüklənmə sayı</p>
+                                <ul class="rating">
+                                    <li><span>(@Model.ExamDto.Exam.DownloadCount dəfə endirilib)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Courses Details Banner PART ENDS ======-->
+<!--====== Courses Details PART START ======-->
+
+<section class="courses_details_area pt-80 pb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 order-lg-last">
+                <div class="courses_details_sidebar">
+                    <div class="courses_sidebar_image">
+                        <img style="height:265px;object-fit:cover;" src="~/fiziknihad/assets/images/pdf23.png" alt="@Model.ExamDto.Exam.ExamName">
+                        <div class="price">
+                            <div class="price_wrapper">
+                                <p>Pulsuz</p>
+                                <span>PDF</span>
+                            </div>
+                        </div>
+                        <div class="courses_btn">
+                            <a asp-controller="Exam" asp-action="DownloadFile" asp-route-id="@Model.ExamDto.Exam.Id" asp-route-filePath="@Model.ExamDto.Exam.Link" class="main-btn">Yüklə</a>
+                        </div>
+                    </div>
+                    <div class="courses_sidebar_title">
+                        <h4 class="title">Sınaq Haqqında</h4>
+                    </div>
+                    <div class="courses_sidebar_list">
+                        <ul class="list">
+                            <li><i class="fa fa-clock-o"></i> Test ili <span>@Model.ExamDto.Exam.ExamYear</span></li>
+                            <li><i class="fa fa-files-o"></i> Test növü<span>@Model.ExamDto.Exam.Examcategory.Name</span></li>
+                            <li><i class="fa fa-globe"></i> Dil<span>Azərbaycan</span></li>
+                        </ul>
+                        <ul class="social">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-telegram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 order-lg-first">
+                <div class="courses_details_content">
+                    <div class="single_courses_details">
+                        <h4 class="courses_details_title">Sınaq haqqında</h4>
+                        <p>Sınağın özəllikləri - Bu sınaqda siz fizika sualları ilə tanış olmaqla yanaşı test işləmə qabiliyyətinizidə təkmilləşdirmiş olacaqsınız. Beləki sınaqlar qəbul vəya qəbul tipli olmaqla çətinlik çəkdiyiniz hissələri meydana çıxaracaqdır</p>
+                    </div>
+
+                    <div class="courses_about mt-50">
+                        <div class="courses_top_bar">
+                            <div class="courses_title">
+                                <h4 class="courses_details_title">Fizika Müəllimi</h4>
+                            </div>
+                        </div>
+
+                        <div class="courses_about_wrapper d-flex flex-wrap">
+                            <div class="single_teachers d-flex">
+                                <div class="author_image">
+                                    <img style="object-fit:cover;object-position:right;" src="~/fiziknihad/assets/images/fiziknihad2.jpeg" alt="">
+                                </div>
+                                <div class="author_content media-body">
+                                    <h4 class="author_name">Nihad Şahbazov</h4>
+                                    <ul class="social">
+                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="courses_reviews mt-50">
+                        <div class="courses_top_bar">
+                            <div class="courses_title">
+                                <h4 class="courses_details_title">Burada sınaq barədə müzakirə edə bilərsiniz</h4>
+                            </div>
+                        </div>
+                        <div class="fb-comments" data-href="http://turik5411-001-site6.btempurl.com/" data-width="550" data-numposts="10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Courses Details PART ENDS ======-->

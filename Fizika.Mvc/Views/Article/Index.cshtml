@@ -1,0 +1,110 @@
+﻿@model Fizika.Entities.DTOs.ArticleListDto
+@using Fizika.Mvc.Extensions
+@{ Layout = "_Layout";
+    ViewBag.Title = "Ana Səhifə"; }
+
+<!--====== Page Banner PART START ======-->
+
+<section class="page_banner bg_cover" style="background-image: url(assets/images/about_bg.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner_content text-center">
+                    <h4 class="title">Faydalı Məlumatlar</h4>
+                    <ul class="breadcrumb justify-content-center">
+                        <li><a href="/">Ana Səhifə</a></li>
+                        <li><a class="active" href="/bloq">Bloqlar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Page Banner PART ENDS ======-->
+<!--====== Blog List Page PART START ======-->
+
+<section class="blog_list_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                @foreach (var item in Model.Articles)
+                {
+    <div class="single_blog_list mt-50">
+        <div class="blog_list_image">
+            <img src="~/img/@item.ThumbNail" alt="blog">
+        </div>
+        <div class="blog_list_content">
+            <span class="date"><span></span>@item.Date.ToShortTimeString()</span>
+
+            <div class="blog_content_wrapper">
+                <ul class="blog_meta">
+                    <li><a href="#">Nihad Şahbazov</a></li>
+                    <li><a href="#">@item.Date.ToShortDateString()</a></li>
+                    <li><i class="far fa-eye"></i> @item.ViewsCount Baxış  </li>
+                    <li><i class="far fa-comments"></i> @item.CommentCount Şərh</li>
+                </ul>
+                <h4 class="blog_title"><a href="/Bloq/@Url.FriendlyUrlHelper(item.Title).ToLower()/@item.Id">@item.Title</a></h4>
+            </div>
+        </div>
+    </div>}
+                <ul class="pagination justify-content-center">
+                    @{ if (Model.ShowPrevious)
+                        {
+                            if (Model.CategoryId != null)
+                            {
+            <li class="page-item"><a asp-route-currentPage="@(Model.CurrentPage - 1)" asp-route-categoryId="@Model.CategoryId.Value" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize"><i class="fa fa-angle-left"></i></a></li> }
+                            else
+                            {
+            <li class="page-item"><a asp-route-currentPage="@(Model.CurrentPage - 1)" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize"><i class="fa fa-angle-left"></i></a></li> }
+                        }
+                        for (int i = 1; i < Model.TotalPages; i++)
+                        {
+                            if (Model.CategoryId != null)
+                            {
+            <li class="page-item @(i==Model.CurrentPage ? "active" : "")"><a asp-route-currentPage="@i" asp-route-categoryId="@Model.CategoryId.Value" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize">@i</a></li> }
+                            else
+                            {
+            <li class="page-item @(i==Model.CurrentPage ? "active" : "")"><a asp-route-currentPage="@i" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize">@i</a></li> }
+                        }
+                        if (Model.ShowNext)
+                        {
+                            if (Model.CategoryId != null)
+                            {
+            <li class="page-item"><a asp-route-currentPage="@(Model.CurrentPage + 1)" asp-route-categoryId="@Model.CategoryId.Value" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize"><i class="fa fa-angle-right"></i></a></li> }
+                            else
+                            {
+            <li class="page-item"><a asp-route-currentPage="@(Model.CurrentPage + 1)" asp-route-isAscending="@Model.IsAscending" asp-route-pageSize="@Model.PageSize"><i class="fa fa-angle-right"></i></a></li> }
+                        } }
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                @await Component.InvokeAsync("RightSidebar")
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Blog List Page PART ENDS ======-->
+@section Scripts{
+    <script>$(document).ready(function () {
+            $(function () {
+                const selectPageSize = $("#select-page-size");
+                const selectIsAscending = $("#select-is-ascending");
+                const categoryId = $("#category-id").val();
+                const currentPage = $("#current-page").val();
+                const categoryQuery = categoryId !== null ? `&categoryId=${categoryId}` : null;
+                const currentUrl = "/Bloq";
+
+                selectPageSize.on("change", function () {
+                    window.location.href =
+                        `${currentUrl}/?pageSize=${selectPageSize.val()}&isAscending=${selectIsAscending.val()}${categoryQuery != null ? categoryQuery : null}&currentPage=${currentPage}`
+                });
+
+                selectIsAscending.on("change", function () {
+                    window.location.href =
+                        `${currentUrl}/?pageSize=${selectPageSize.val()}&isAscending=${selectIsAscending.val()}${categoryQuery != null ? categoryQuery : null}&currentPage=${currentPage}`
+                });
+            });
+        });</script>
+}

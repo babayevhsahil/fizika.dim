@@ -1,0 +1,16 @@
+﻿@model Fizika.Entities.DTOs.CommentAddDto
+<form asp-controller="Comment" asp-action="Add" method="post" id="form-comment-add" class="comment-form" novalidate="">
+    <input type="hidden" name="IsValid" value="@ViewData.ModelState.IsValid.ToString()" />
+    <div asp-validation-summary="All" style="display:none;" class="text-danger" id="validation-summary" aria-hidden="true"></div>
+    <input type="hidden" asp-for="ArticleId" />
+    <p class="comment-notes"><span id="email-notes">* ilə işarələnmiş sahələr məcburidir</span><span class="required"></span></p>
+        <div class="single_form">
+            <input type="text" asp-for="CreatedByName" required placeholder="Ad Soyad *">
+        </div> <!-- single form -->
+        <div class="single_form">
+            <textarea id="comment" asp-for="Text" cols="45" rows="8" placeholder="Mətn *" required="required" ></textarea>
+        </div> <!-- single form -->
+        <div class="single_form">
+            <input name="submit" type="submit" id="btnSave" class="main-btn" value="Göndər">
+        </div> <!-- single form -->
+</form>

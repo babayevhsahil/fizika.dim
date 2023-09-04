@@ -1,0 +1,89 @@
+﻿@model Fizika.Mvc.Areas.Admin.Models.ExamAddViewModel
+@{
+    ViewBag.Title = "Proyekt Elave Et";
+}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<div class="row">
+    <div class="col-md-12  header-wrapper">
+        <h1 class="page-header">Admin - Proyektler</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<ol class="breadcrumb">
+    <li><a asp-area="Admin" asp-action="Index" asp-controller="Home">Admin</a></li>
+    <li><a asp-area="A" asp-action="Index" asp-controller="Exam">Testler</a></li>
+    <li class="active"><a asp-area="Admin" asp-action="Add" asp-controller="Exam">Elave Et</a></li>
+</ol>
+
+<form asp-action="Add" asp-controller="Exam" method="post" enctype="multipart/form-data">
+    <div class="row mt-2">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="ExamName"></label>
+                        <input class="form-control" id="articleTitle" asp-for="ExamName" />
+                        <span class="text-danger" asp-validation-for="ExamName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Teacher"></label>
+                        <input class="form-control" id="articleTitle" asp-for="Teacher" />
+                        <span class="text-danger" asp-validation-for="Teacher"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExamYear"></label>
+                        <input class="form-control" id="articleTitle" asp-for="ExamYear" />
+                        <span class="text-danger" asp-validation-for="ExamYear"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Vacib əməliyyatlar
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="categoryList" asp-for="ExamCategoryId"></label>
+                        <select asp-for="ExamCategoryId" asp-items="@(new SelectList(Model.ExamCategories,"Id","Name"))" id="categoryList" class="form-control">
+                        <option></option>
+                          </select>
+                        <span class="text-danger" asp-validation-for="ExamCategoryId"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Date"></label>
+                        <input type="text" id="datapicker" class="form-control" value="@DateTime.Now.ToShortDateString()" asp-for="Date" />
+                        <span class="text-danger" asp-validation-for="Date"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pdfUpload" asp-for="Link"></label>
+                        <input type="file"  id="thumbnailUpload" class="form-control-file" asp-for="Link" placeholder="Zəhmət Olmasa Pdf seçin" />
+                        <span class="text-danger" asp-validation-for="Link"></span>
+                    </div>
+                    <div class="form-check">
+                        <label asp-for="IsActive" for="isActive" class="form-check-label"></label>
+                        <input type="checkbox" id="isActive" class="form-check-input" asp-for="IsActive" />
+                        <span class="text-danger" asp-validation-for="IsActive"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="submit" class="btn btn-info btn-block">Yadda Saxla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script src="~/vendor/datatables/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="~/js/crud/article/articleAdd.js"></script>
+}
+@section Styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/css/select2-bootstrap4.min.css" rel="stylesheet" />
+}

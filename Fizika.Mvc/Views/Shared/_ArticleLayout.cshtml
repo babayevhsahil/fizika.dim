@@ -1,0 +1,538 @@
+﻿@using Microsoft.Extensions.Options
+@using Fizika.Entities.Concrete
+@inject IOptionsSnapshot<WebsiteInfo> WebsiteInfo
+@{
+    var websiteInfo = WebsiteInfo.Value;
+}
+<!doctype html>
+<html lang="az">
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="dY0YVme9q1z5M7W1JpFCvdLJo7_d2_qTkXYxxmfWtCw" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description">
+    <meta name="keywords" content="@ViewBag.Tags" />
+    <meta name="image" content="https://fizikadim.az/img/@ViewBag.image" />
+    <meta name="twitter:image" content="https://fizikadim.az/img/@ViewBag.image" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@@fizikadim" />
+    <meta name="twitter:creator" content="@@fizikadim">
+    <meta name="twitter:title" content="@ViewBag.Title" />
+    <meta name="twitter:description" content="@ViewBag.Description" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="@ViewBag.Description">
+    <meta property="og:url" content="https://fizikadim.az/@ViewBag.seolink" />
+    <meta property="og:site_name" content="Fizikadim" />
+    <meta property="og:locale" content="az_AZ" />
+    <meta property="og:title" name="og:title" content="@ViewBag.Title" />
+    <meta property="og:image" content="https://fizikadim.az/img/@ViewBag.image" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="thumbnail" content="https://fizikadim.az/img/@ViewBag.image" />
+    <meta name="msapplication-TileImage" content="https://fizikadim.az/img/@ViewBag.image" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <link rel="canonical" href="https://fizikadim.az/@ViewBag.seolink">
+    <meta name="author" content="@ViewBag.Author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/ld+json">
+{
+    "@@context": "http://schema.org",
+    "@@type": "Article",
+    "mainEntityOfPage": "https://fizikadim.az/@ViewBag.seolink",
+    "headline": "@ViewBag.seolink",
+    "description": "@ViewBag.Description",
+    "speakable": {
+        "@@type": "SpeakableSpecification",
+        "xpath": [
+            "/html/head/@ViewBag.seolink",
+            "/html/head/meta[@@name='@ViewBag.Description']/@@content"
+        ]
+    },
+    "datePublished": "@ViewBag.datetime",
+    "dateModified": "@ViewBag.modifiedtime",
+"author":[{"@@type":"Person","name":"@ViewBag.Author","sameAs":["https:\/\/www.facebook.com\/fizika.dim","https:\/\/www.instagram.com\/fizika.dim","https:\/\/www.youtube.com\/NihadŞahbazov"]}]}],
+    "publisher": {
+        "@@type": "Organization",
+        "name": "Fizikadim",
+        "logo": {
+            "@@type": "ImageObject",
+            "url": "https://fizikdim.az/fiziknihad/assets/images/fiziknihadlogo.png",
+            "width": 203,
+            "height": 60
+        }
+    },
+    "thumbnailUrl": "https://fizikadim.az/img/@ViewBag.image",
+    "image": {
+        "@@type": "ImageObject",
+        "url": "https://fizikadim.az/img/@ViewBag.image",
+        "height": 675,
+        "width": 1200
+    }
+    , "keywords": "@ViewBag.Tags"
+}
+    </script>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="~/fiziknihad/assets/images/fiziknihadlogo.png" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/bootstrap.min.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/animate.css">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/font-awesome.min.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/magnific-popup.css">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/nice-select.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/slick.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/styleee.css">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="~/fiziknihad/assets/css/responsiveee.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <style>
+        .header_bottom_login ul li a {
+            color: white;
+        }
+
+        .header_bottom_login a {
+            border-radius: 50%;
+            height: 28px;
+            text-align: center;
+            width: 28px;
+            display: inline-block;
+            background-color: black;
+            line-height: 27px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            margin-right: 2px;
+            font-size: 19px;
+            color: #fff;
+            transition: 2s;
+        }
+
+        marquee {
+            background: #fcc741;
+        }
+
+        @@media (max-width: 767px) {
+            .header_bottom_login a {
+                border-radius: 50%;
+                height: 29px;
+                text-align: center;
+                width: 28px;
+                display: inline-block;
+                background-color: transparent;
+                line-height: 28px;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                margin-right: -5px;
+                font-size: 19px;
+                color: #fff;
+                transition: 2s;
+            }
+
+            .navbar_meta ul li a {
+                width: 27px;
+            }
+
+            .navbar-toggler {
+                position: absolute;
+                top: -44px;
+                right: 5px;
+            }
+
+                .navbar-toggler span {
+                    background-color: white !important;
+                }
+
+            .header_mobile .navbar_meta {
+                right: 5px;
+            }
+
+            marquee {
+                background: #fff;
+                margin: 30px auto;
+                display: block;
+                color: black;
+                width: 100%;
+                left: 0px;
+                height: 24px;
+                z-index: 56;
+                position: absolute;
+                top: 113px;
+                margin: 0 auto;
+            }
+
+            .albert {
+                display: none;
+            }
+
+            .header_shape_4 {
+                display: none;
+            }
+
+            .slider_content_4 {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            .navbar_meta .mobilhava {
+                width: 123px;
+                position: absolute;
+                top: -18px;
+                right: 210px;
+            }
+
+            .header_mobile_bg {
+                height: 60px;
+            }
+
+            .nihadlogo {
+                width: 49px;
+                position: absolute;
+                top: 2px;
+                right: 43%;
+            }
+
+            .navbar-brand {
+                width: 120px;
+                top: -13px;
+                left: -10px;
+                position: relative;
+            }
+
+            .header_mobile_bg {
+                background: #fcc741;
+            }
+
+            .xaribulbul {
+                width: 43px;
+                position: absolute;
+                top: 3px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    <!--====== Header Desktop PART START ======-->
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <marquee direction="left" scroolamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+                <ul class="ticker-left">
+                    <li><a href="/elaqe">Qeydiyyatın bitməsinə az qaldı. Qeydiyyatdan keçmək üçün bura kliklə</a></li>
+                </ul>
+            </marquee>
+        </div>
+    </div>
+
+    <section class="header_area header_area_2 d-none d-lg-block">
+        <div class="container">
+            <div class="header_top_wrapper_2 d-flex justify-content-between">
+                <div class="header_top_info d-none d-md-block">
+                    <ul>
+                        <li class="fhava">
+                            <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/baku-19309"><img src="https://w.bookcdn.com/weather/picture/5_19309_1_1_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=60651" alt="booked.net" /></a><!-- weather widget end -->
+                        </li>
+                        <li><img src="~/fiziknihad/assets/images/call-2.png" alt="call"><a href="#">+994 50 324 44 17</a></li>
+                        <li><img src="~/fiziknihad/assets/images/mail-2.png" alt="mail"><a href="#">nihadsaxbaz@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="header_menu_3">
+                    <ul class="main_menu">
+                        <li>
+                            <a href="/">Ana Səhifə</a>
+                        </li>
+                        <li>
+                            <a asp-action="About" asp-controller="Home">Haqqımda</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Article">Faydalı Məlumatlar</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Exam">Sınaqlar</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Video">Videolar</a>
+                        </li>
+                        <li>
+                            <a asp-action="Contact" asp-controller="Home">Əlaqə</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="header_bottom_wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="logo">
+                            <a href="/"><img style="width:60px" src="~/fiziknihad/assets/images/fiziknihadlogo.png" alt="logo"></a> <span>   </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="header_search">
+                            <input type="text" placeholder="Sınaq axtarışı">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="header_bottom_login">
+                            <style>
+                                #fizikn {
+                                    font-size: 14.4px;
+                                }
+                            </style>
+                            <ul>
+                                <li><a style="background: #0088cc;" target="_blank" href="https://t.me/joinchat/t0MoWFEk9GZiNTQy"><i id="fizikn" class="fab fa-telegram-plane"></i></a></li>
+                                <li><a style="background: #1877f2;" target="_blank" href="https://www.facebook.com/fizika.dim"><i id="fizikn" class="fab fa-facebook-f"></i></a></li>
+                                <li><a style="background: #c13584;" target="_blank" href="https://www.instagram.com/fizika.dim/"><i id="fizikn" class="fab fa-instagram"></i></a></li>
+                                <li><a style="background: #ff0000;" target="_blank" href="https://www.youtube.com/c/NihadŞahbazov/featured"><i id="fizikn" class="fab fa-youtube"></i></a></li>
+                                <li><a class="main-btn" href="/Admin/Auth/Login?ReturnUrl=%2FAdmin%2F"><i class="far fa-user"></i> Daxil ol</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--====== Header Desktop PART ENDS ======-->
+    <!--====== Header Mobile PART START ======-->
+
+    <section class="header_area header_area_2 d-lg-none">
+        <div class="header_top">
+            <div class="container">
+                <div class="header_top_wrapper d-flex justify-content-center justify-content-md-between">
+                    <div class="header_top_info d-none d-md-block">
+                        <ul>
+                            <li><img src="~/fiziknihad/assets/images/mail-2.png" alt="mail"><a href="#">nihadsaxbaz@gmail.com</a></li>
+                            <li><img src="~/fiziknihad/assets/images/call-2.png" alt="call"><a href="#">+994 50 324 44 17</a></li>
+                        </ul>
+                    </div>
+                    <div class="header_top_login">
+                        <ul>
+                            <li>
+                                <img class="nihadlogo" src="~/fiziknihad/assets/images/fiziknihadlogo.png" alt="logo">
+                            </li>
+                            <li>
+                                <img class="xaribulbul" src="~/fiziknihad/assets/images/xaribulbul.png" alt="logo">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_menu  header_mobile">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg header_mobile_bg">
+                    <!-- weather widget start -->
+                    <a class="navbar-brand" target="_blank" href="https://www.booked.net/weather/baku-19309"><img src="https://w.bookcdn.com/weather/picture/5_19309_1_1_137AE9_250_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=60651" alt="booked.net" /></a><!-- weather widget end -->
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li>
+                                <a href="/">Ana Səhifə</a>
+                            </li>
+                            <li>
+                                <a asp-action="About" asp-controller="Home">Haqqımda</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Article">Faydalı Məlumatlar</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Exam">Sınaqlar</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Video">Videolar</a>
+                            </li>
+                            <li>
+                                <a asp-action="Contact" asp-controller="Home">Əlaqə</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="navbar_meta header_bottom_login">
+                        <ul>
+                            <li><a style="background: #0088cc;" target="_blank" href="https://t.me/joinchat/t0MoWFEk9GZiNTQy"><i id="fizikn" class="fab fa-telegram-plane"></i></a></li>
+                            <li><a style="background: #1877f2;" target="_blank" href="https://www.facebook.com/fizika.dim"><i id="fizikn" class="fab fa-facebook-f"></i></a></li>
+                            <li><a style="background: #c13584;" target="_blank" href="https://www.instagram.com/fizika.dim/"><i id="fizikn" class="fab fa-instagram"></i></a></li>
+                            <li><a style="background: #ff0000;" target="_blank" href="https://www.youtube.com/c/NihadŞahbazov/featured"><i id="fizikn" class="fab fa-youtube"></i></a></li>
+                            <li>
+                                <a id="search" href="#"><img src="~/fiziknihad/assets/images/search-2.png" alt="search"></a>
+                                <div class="search_bar">
+                                    <input type="text" placeholder="Axtarış">
+                                    <button><i style="background:#ff6a00" class="fa fa-search"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!--====== Header Mobile PART ENDS ======-->
+    <!--shorcut are-->
+    <a href="https://wa.me/message/DT6J2QE2EILZJ1" class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+    <!--shorcut are-end-->
+
+    @RenderBody()
+    <!--====== Footer PART START ======-->
+
+    <footer class="footer_area bg_cover" style="background-image: url(~/fiziknihad/assets/images/footer_bg.jpg)">
+        <div class="footer_widget pt-80 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer_about mt-50">
+                            <a href="/"><img style="width:60px" src="~/fiziknihad/assets/images/fiziknihadlogo.png" alt="logo"></a> <span>   </span>
+
+
+                            <p>Elektronika sahəsi üzrə üstün səviyyədə cihazların daxili prinsip və funksiyaları üzrə biliklərini genişləndirərək şagirdlərə dərs daxilində əyanı fizikanın gözəlliyini göstərmişdir</p>
+                            <ul class="footer_social">
+                                <li><a target="_blank" href="https://t.me/joinchat/t0MoWFEk9GZiNTQy"><i class="fab fa-telegram"></i></a></li>
+                                <li><a style="background-color: #4e69b0; border-color: #4e69b0;" target="_blank" href="https://www.facebook.com/fizika.dim"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/fizika.dim/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a target="_blank" href="https://www.youtube.com/c/NihadŞahbazov/featured"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="footer_widget_wrapper d-flex flex-wrap">
+                            <div class="footer_link mt-50">
+                                <h5 class="footer_title">Sayt Xəritəsi</h5>
+
+                                <div class="footer_link_wrapper d-flex">
+                                    <ul class="link">
+                                        <li>
+                                            <a href="/">Ana Səhifə</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="About" asp-controller="Home">Haqqımda</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Index" asp-controller="Article">Faydalı Məlumatlar</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Index" asp-controller="Exam">Sınaqlar</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Index" asp-controller="Video">Videolar</a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Contact" asp-controller="Home">Əlaqə</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="footer_contact mt-50">
+                                <h5 class="footer_title">Əlaqə</h5>
+                                <ul class="contact">
+                                    <li>Ünvan : Neftçilər M/S yanı Rüstəm Rüstəmov küçəsi</li>
+                                    <li>Əlaqə : nihadsaxbaz@gmail.com</li>
+                                    <li>Telefon : +994 50 324 44 17</li>
+                                    <li><a href="/elaqe">Ünvanı Xəritədə görmək üçün kliklə</a></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_copyright">
+            <div class="container">
+                <div class="footer_copyright_wrapper text-center d-md-flex justify-content-between">
+                    <div class="copyright">
+                        <p>Sayt ©Digitalist tərəfindən hazırlanmışdır</p>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; Bütün hüquqlar Nihad Şahbazov tərəfindən qorunur. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--====== Footer PART ENDS ======-->
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->
+    <!--====== jquery js ======-->
+    <script src="~/fiziknihad/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/fiziknihad/assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="~/fiziknihad/assets/js/bootstrap.min.js"></script>
+    <script src="~/fiziknihad/assets/js/popper.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="~/fiziknihad/assets/js/slick.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="~/fiziknihad/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Counter Up js ======-->
+    <script src="~/fiziknihad/assets/js/waypoints.min.js"></script>
+    <script src="~/fiziknihad/assets/js/jquery.counterup.min.js"></script>
+
+    <!--====== Nice Select js ======-->
+    <script src="~/fiziknihad/assets/js/jquery.nice-select.min.js"></script>
+
+    <!--====== Count Down js ======-->
+    <script src="~/fiziknihad/assets/js/jquery.countdown.min.js"></script>
+
+    <!--====== Appear js ======-->
+    <script src="~/fiziknihad/assets/js/jquery.appear.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="~/fiziknihad/assets/js/main.js"></script>
+    <script src="~/fiziknihad/assets/js/registerDetail.js"></script>
+    @await Component.InvokeAsync("NToastNotify")
+    @RenderSection("Scripts", false)
+    <script src="~/fiziknihad/assets/js/youtube.js"></script>
+</body>
+</html>

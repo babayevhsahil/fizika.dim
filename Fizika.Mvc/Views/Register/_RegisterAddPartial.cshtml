@@ -1,0 +1,22 @@
+﻿@model Fizika.Entities.DTOs.RegisterAddDto
+
+<form asp-action="Add" asp-controller="Register" id="form-register-add" method="post">
+    <input type="hidden" name="IsValid" value="@ViewData.ModelState.IsValid.ToString()" />
+    <div asp-validation-summary="All" style="display:none;" class="text-danger" id="validation-summary" aria-hidden="true"></div>
+    <div class="single_form">
+        <input type="text" asp-for="Fullname" placeholder="Ad Soyad" required>
+    </div>
+    <div class="single_form">
+        <input type="text" asp-for="Email" placeholder="Email" required>
+    </div>
+    <div class="single_form">
+        <input type="text" asp-for="Number" placeholder="Mobil Nömrə" required>
+    </div>
+    <div class="single_form">
+        <textarea asp-for="Message" placeholder="Mesaj" required></textarea>
+    </div>
+    <div class="single_form">
+    <button type="submit" id="btnSave" value="Yazıl" class="main-btn">Yazıl</button>
+    </div>
+</form>
+

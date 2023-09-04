@@ -1,0 +1,16 @@
+﻿using Fizika.Entities.DTOs;
+using Fizika.Shared.Utilities.Results.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fizika.Services.Abstract
+{
+    public interface IMailService
+    {
+        IResult Send(EmailSendDto emailSendDto);
+        IResult SendContactEmail(EmailSendDto emailSendDto);
+    }
+}

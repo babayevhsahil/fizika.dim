@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Fizika - Admin</title>
+    @await Html.PartialAsync("_LayoutCssPartial")
+    <!-- Custom CSS -->
+    <link href="~/css/adminnine.css" rel="stylesheet">
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <div id="wrapper">
+        @*@await Html.PartialAsync("~/Areas/Admin/Views/Shared/AdminMenu/Default.cshtml")*@
+        @await Component.InvokeAsync("AdminMenu") 
+        <!-- /.navbar-static-side -->
+
+        <div id="page-wrapper">
+            <div class="row">
+                <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+                    <button class="menubtn pull-left btn "><i class="glyphicon  glyphicon-th"></i></button>
+                    <div class="searchwarpper">
+                        <div class="input-group searchglobal">
+                            <input type="text" class="form-control" placeholder="Search for..." autofocus>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> <i class="fa fa-envelope fa-fw"></i> </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <strong>John Smith</strong> <span class="pull-right text-muted"> <em>Yesterday</em> </span> </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <strong>John Smith</strong> <span class="pull-right text-muted"> <em>Yesterday</em> </span> </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <strong>John Smith</strong> <span class="pull-right text-muted"> <em>Yesterday</em> </span> </div>
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                    </a>
+                                </li>
+                                <li> <a class="text-center" href="javascript:void(0)"> <strong>Read All Messages</strong> <i class="fa fa-angle-right"></i> </a> </li>
+                            </ul>
+                            <!-- /.dropdown-messages -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> <i class="fa fa-tasks fa-fw"></i> <span class="count">9+</span> </a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div>
+                                            <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div>
+                                            <p> <strong>Task 2</strong> <span class="pull-right text-muted">20% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div>
+                                            <p> <strong>Task 3</strong> <span class="pull-right text-muted">60% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div>
+                                            <p> <strong>Task 4</strong> <span class="pull-right text-muted">80% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li> <a class="text-center" href="javascript:void(0)"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a> </li>
+                            </ul>
+                            <!-- /.dropdown-tasks -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> <i class="fa fa-bell fa-fw"></i> <span class="count">1</span> </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <i class="fa fa-comment fa-fw"></i> New Comment <span class="pull-right text-muted small">4 minutes ago</span> </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <i class="fa fa-twitter fa-fw"></i> 3 New Followers <span class="pull-right text-muted small">12 minutes ago</span> </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <i class="fa fa-envelope fa-fw"></i> Message Sent <span class="pull-right text-muted small">4 minutes ago</span> </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <i class="fa fa-tasks fa-fw"></i> New Task <span class="pull-right text-muted small">4 minutes ago</span> </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div> <i class="fa fa-upload fa-fw"></i> Server Rebooted <span class="pull-right text-muted small">4 minutes ago</span> </div>
+                                    </a>
+                                </li>
+                                <li> <a class="text-center" href="javascript:void(0)"> <strong>See All Alerts</strong> <i class="fa fa-angle-right"></i> </a> </li>
+                            </ul>
+                            <!-- /.dropdown-alerts -->
+                        </li>
+                        <!-- /.dropdown -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle userdd" data-toggle="dropdown" href="javascript:void(0)">
+                                    <div class="userprofile small ">
+                                        <span class="userpic"> <img src="~/img/userlogin.png" alt="" class="userpicimg"> </span>
+                                        <div class="textcontainer">
+                                            <h3 class="username">@User.Identity.Name</h3>
+                                            <p>Xoş gəldiniz</p>
+                                        </div>
+                                    </div>
+                                    <i class="caret"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li> <a asp-action="ChangeDetails" asp-controller="User" asp-area="Admin"><i class="fa fa-user fa-fw"></i> Şəxsi məlumatlar</a> </li>
+                                    <li> <a asp-action="PasswordChange" asp-controller="User" asp-area="Admin"><i class="fa fa-gear fa-fw"></i> Şifrəni dəyiş</a> </li>
+                                    <li> <a asp-action="Logout" asp-controller="Auth" asp-area="Admin"><i class="fa fa-sign-out fa-fw"></i> Çıxış</a> </li>
+                                </ul>
+                                <!-- /.dropdown-user -->
+                            </li>
+                        }
+                        
+                        <!-- /.dropdown -->
+                    </ul>
+                    <!-- /.navbar-top-links -->
+
+                </nav>
+            </div>
+            <!--<div class="row">
+            <div class="col-md-12  header-wrapper">
+                <h1 class="page-header">Dashboard</h1>
+                <p class="page-subtitle">This is amazing template for all type of admin interfaces.</p>
+            </div>-->
+            <!-- /.col-lg-12 -->
+            <!--</div>-->
+            <!-- /.row -->
+            <!--<ol class="breadcrumb">
+            <li><a href="javascript:void(0)">Admin9</a></li>
+            <li class="active">Dashboard</li>
+        </ol>-->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success mt-2" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @RenderBody()
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+   @await Html.PartialAsync("_LayoutJsPartial") 
+   @await RenderSectionAsync("Scripts",false)
+  
+</body>
+</html>

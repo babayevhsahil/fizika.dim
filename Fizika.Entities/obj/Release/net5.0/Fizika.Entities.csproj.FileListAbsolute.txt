@@ -1,0 +1,15 @@
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\Fizika.Entities.deps.json
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\Fizika.Entities.dll
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\ref\Fizika.Entities.dll
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\Fizika.Entities.pdb
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\Fizika.Shared.dll
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\bin\Release\net5.0\Fizika.Shared.pdb
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.csproj.AssemblyReference.cache
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.AssemblyInfoInputs.cache
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.AssemblyInfo.cs
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.csproj.CopyComplete
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.dll
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\ref\Fizika.Entities.dll
+C:\Users\Tural\source\repos\Fizika\Fizika.Entities\obj\Release\net5.0\Fizika.Entities.pdb

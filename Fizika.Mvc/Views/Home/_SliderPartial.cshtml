@@ -1,0 +1,34 @@
+﻿@using Microsoft.Extensions.Options
+@using Fizika.Entities.Concrete
+@inject IOptionsSnapshot<SliderPageInfo> SliderPageInfo
+@{
+    var slider = SliderPageInfo.Value;
+}
+
+
+<section class="slider_area_4 bg_cover d-flex align-items-center" style="background-image: url(/fiziknihad/assets/images/shape/bg_shape-2.jpg)">
+    <div class="slider_shape shape_1"></div>
+    <div class="slider_shape shape_2">
+        <img src="~/fiziknihad/assets/images/shape/shape-9.png" alt="shape">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center justify-content-lg-between">
+            <div class="col-lg-6">
+                <div class="slider_content_4">
+                    <h5 class="sub_title">Fizika Dim</h5>
+                    <h2 class="main_title">@slider.Header</h2>
+                    <p>@slider.Content</p>
+                    <a class="main-btn" href="/elaqe">Əlaqə</a>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-8 albert">
+                <div class="slider_image_4">
+                    <img src="~/fiziknihad/assets/images/albert4.png" alt="hero">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_shape_4">
+        <div class="round_shape"></div>
+    </div>
+</section>

@@ -1,0 +1,198 @@
+﻿@using Fizika.Entities.DTOs
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--====== Slider PART START ======-->
+@{
+    await Html.RenderPartialAsync("_SliderPartial");
+}
+
+
+
+<!--====== Slider PART ENDS ======-->
+<!--====== About 4 PART START ======-->
+@{
+    await Html.RenderPartialAsync("_AboutPartial");
+}
+
+
+<!--====== About 4 PART ENDS ======-->
+<!--====== Skill PART START ======-->
+
+<section class="skill_area pt-80 pb-130">
+    <div class="skill_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="skill_content mt-40">
+                        <div class="section_title">
+                            <h3 class="main_title">Nihad müəllim Şahbazovun əlavə üstünlükləri</h3>
+                            <p>Müəllimimiz tələbələri üçün hər zaman dəstək olaraq, imtahanda yüksək bal toplamaları üçün lazımi olan bütün tədris yollarında peşəkar xidmət göstərir.</p>
+                        </div>
+
+                        <div class="skill_counter d-flex flex-wrap">
+                            <div class="single_skill_counter mt-30 d-flex align-items-center">
+                                <div class="skill_counter_icon">
+                                    <img src="~/fiziknihad/assets/images/count_icon-2.png" alt="icon">
+                                </div>
+                                <div class="skill_counter_content media-body">
+                                    <span class="count"><span class="counter">300</span>+</span>
+                                    <p>Daimi tələbə sayı</p>
+                                </div>
+                            </div>
+                            <div class="single_skill_counter mt-30 d-flex align-items-center">
+                                <div class="skill_counter_icon">
+                                    <img src="~/fiziknihad/assets/images/count_icon-3.png" alt="icon">
+                                </div>
+                                <div class="skill_counter_content media-body">
+                                    <span class="count"><span class="counter">10.000</span>+</span>
+                                    <p>Ümumi tələbə sayı</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-xl-1 col-xl-5 col-lg-6">
+                    <div class="skill_progress mt-50">
+
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title">Nəticəyə zəmanat</h6>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="100"><span>100%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title">Tələbkarlıq</h6>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="91"><span>91%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title">Münasib qiymət</h6>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="92"><span>92%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title">Praktiki izah</h6>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="96"><span>96%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="skill_image mt-50 d-none d-lg-flex align-items-center justify-content-end">
+            <div class="image">
+                <img class="s_image" src="~/fiziknihad/assets/images/skill.jpg" alt="skill">
+                <img class="s_shape" src="~/fiziknihad/assets/images/shape/shape-7.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Skill PART ENDS ======-->
+<!--====== Why Chooses Me PART START ======-->
+@{
+    await Html.RenderPartialAsync("_ChoosePartial");
+}
+
+<!--====== Why Chooses Me PART ENDS ======-->
+<!--====== Courses PART START ======-->
+
+@{
+    await Html.RenderPartialAsync("_ExamPartial");
+}
+
+
+
+<!--====== Courses PART ENDS ======-->
+<!--====== Testimonial PART START ======-->
+
+@{
+    await Html.RenderPartialAsync("_StudentPartial");
+}
+
+<!--====== Testimonial PART ENDS ======-->
+<!--====== COUNTDOWN PART START ======-->
+
+<section class="countdown_area_2 pt-80">
+    <div class="countdown_wrapper_2">
+        <div class="container">
+            <div class="row justify-content-center">
+                @*<div class="col-lg-6 col-md-9">
+                    <div class="countdown_2 mt-50">
+                        <div data-countdown="2021/12/27"></div>
+                    </div>
+                </div>*@
+                <div class="col-xl-5 col-lg-6 col-md-8">
+                    <div class="register_countdown_2 mt-50">
+                        <div class="register_countdown_content">
+                            <h4 class="title">Kurs haqqında məlumat</h4>
+                        </div>
+                        <img class="down" src="~/fiziknihad/assets/images/down.png" alt="Icon">
+
+                        <div class="register_form register_form_2 text-center">
+                            <div class="register_form_title">
+                                <h4 class="title">Kursa Yazıl</h4>
+                            </div>
+                            <div class="register_form_wrapper">
+                                <partial name="~/Views/Register/_RegisterAddPartial.cshtml" model="new RegisterAddDto()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== COUNTDOWN PART ENDS ======-->
+<!--====== Video PART START ======-->
+@{
+    await Html.RenderPartialAsync("_VideoPartial");
+}
+<!--====== Video PART ENDS ======-->
+<!--====== Blog PART START ======-->
+@{
+    await Html.RenderPartialAsync("_ArticlePartial");
+}
+<!--====== Blog PART ENDS ======-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@*@section Scripts{
+    <script src="~/fiziknihad/assets/js/registerDetail.js"></script>
+}*@

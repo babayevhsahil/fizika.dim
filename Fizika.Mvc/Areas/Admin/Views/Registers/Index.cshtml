@@ -1,0 +1,87 @@
+﻿@model Fizika.Entities.DTOs.RegisterListDto
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Qeydiyyatdan Kecenler";
+}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<h1>SALAM</h1>
+<div class="row">
+    <div class="col-md-12  header-wrapper">
+        <h1 class="page-header">Admin - Online Qeydiyyat</h1>
+        <p class="page-subtitle">Burada  qeydiyyati izleye  və silə bilərsiniz.</p>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<ol class="breadcrumb">
+    <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
+    <li class="active"><a asp-area="Admin" asp-controller="Register" asp-action="Index">Qeydiyyat</a></li>
+</ol>
+
+<div id="modalPlaceHolder" aria-hidden="true"></div>
+<div class="card mb-4">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="commentsTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Mesaj</th>
+                        <th>Nömrə</th>
+                        <th>Email</th>
+                        <th>Aktiv</th>
+                        <th>Silinib</th>
+                        <th>Yazılma Tarixi</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Mesaj</th>
+                        <th>Nömrə</th>
+                        <th>Email</th>
+                        <th>Aktiv</th>
+                        <th>Silinib</th>
+                        <th>Yazılma Tarixi</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var register in Model.Registers)
+                    {
+                    <tr name="@register.Id">
+                        <td>@register.Id</td>
+                        <td>@register.Fullname</td>
+                        <td>@(register.Message.Length>75 ? register.Message.Substring(0, 75):register.Message)</td>
+                        <td>@register.Number</td>
+                        <td>@register.Email</td>
+                        <td>@(register.IsActive ? "Bəli" : "Xeyr")</td>
+                        <td>@(register.IsDeleted ? "Bəli" : "Xeyr")</td>
+                        <td>@register.CreatedDate.ToShortDateString()</td>
+                        <td>
+                            <button class="btn btn-info btn-sm btn-detail" data-id="@register.Id"><span class="fas fa-newspaper"></span></button>
+                            <button class="btn btn-danger btn-sm mt-1 btn-delete" data-id="@register.Id"><span class="fas fa-minus-circle"></span></button>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="~/js/crud/register/registerIndex.js" type="application/ecmascript"></script>
+}
+@section Styles
+{
+
+}

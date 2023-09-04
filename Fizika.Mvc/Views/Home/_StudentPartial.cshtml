@@ -1,0 +1,47 @@
+﻿@model Fizika.Mvc.Models.HomeViewModel 
+<section class="testimonial_area_3">
+    <div class="testimonial_title_wrapper_2 bg_cover" style="background-image: url(/fiziknihad/assets/images/testimonial_bg.jpg)">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="testimonial_title text-center">
+                        <img src="~/fiziknihad/assets/images/quota.png" alt="quota">
+                        <h2 class="title">Yüksək bal yığmış tələbələrim</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial_title_shape">
+            <img src="~/fiziknihad/assets/images/shape/shape-8.png" alt="shape">
+        </div>
+    </div>
+
+    <div class="testimonial_content_wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="testimonial">
+                        <div class="testimonial_content_active_3">
+                            @foreach (var item in Model.StudentsListDto.Students)
+                            {
+                                <div class="single_testimonial_3 text-center">
+                                    <p>@item.University </p>
+                                    <h5 class="author_name">@item.Fullname</h5>
+                                    <span>@item.Point bal, @item.PointPhysic fizika balı</span>
+                                </div>
+                            }
+                        </div>
+                        <div class="testimonial_author_active_3">
+                            @foreach (var item in Model.StudentsListDto.Students)
+                            {
+                                <div class="single_author">
+                                    <img src="~/fiziknihad/assets/images/student.png" alt="author">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

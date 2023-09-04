@@ -1,0 +1,114 @@
+﻿@*@model Fizika.Entities.Concrete.SmmPacket
+<style>
+    .form-group input {
+        margin: 5px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <form asp-area="Admin" asp-controller="Option" asp-action="PriceSmm" method="post">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3>SMM1 Paket</h3>
+                    <input type="text" asp-for="PacketFirstName" value="@Model.PacketFirstName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketFirstPrice" value="@Model.PacketFirstPrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text1" value="@Model.Text1" />
+                        <input type="text" asp-for="Text2" value="@Model.Text2" />
+                        <input type="text" asp-for="Text3" value="@Model.Text3" />
+                        <input type="text" asp-for="Text4" value="@Model.Text4" />
+                        <input type="text" asp-for="Text5" value="@Model.Text5" />
+                        <input type="text" asp-for="Text6" value="@Model.Text6" />
+                        <input type="text" asp-for="Text7" value="@Model.Text7" />
+                        <input type="text" asp-for="Text8" value="@Model.Text8" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>SMM2 Paket</h3>
+                    <input type="text" asp-for="PacketSecondName" value="@Model.PacketSecondName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketSecondPrice" value="@Model.PacketSecondPrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text9" value="@Model.Text9" />
+                        <input type="text" asp-for="Text10" value="@Model.Text10" />
+                        <input type="text" asp-for="Text11" value="@Model.Text11" />
+                        <input type="text" asp-for="Text12" value="@Model.Text12" />
+                        <input type="text" asp-for="Text13" value="@Model.Text13" />
+                        <input type="text" asp-for="Text14" value="@Model.Text14" />
+                        <input type="text" asp-for="Text15" value="@Model.Text15" />
+                        <input type="text" asp-for="Text16" value="@Model.Text16" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>SMM3 Paket</h3>
+                    <input type="text" asp-for="PacketThirdName" value="@Model.PacketThirdName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketThirdPrice" value="@Model.PacketThirdPrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text17" value="@Model.Text17" />
+                        <input type="text" asp-for="Text18" value="@Model.Text18" />
+                        <input type="text" asp-for="Text19" value="@Model.Text19" />
+                        <input type="text" asp-for="Text20" value="@Model.Text20" />
+                        <input type="text" asp-for="Text21" value="@Model.Text21" />
+                        <input type="text" asp-for="Text22" value="@Model.Text22" />
+                        <input type="text" asp-for="Text23" value="@Model.Text23" />
+                        <input type="text" asp-for="Text24" value="@Model.Text24" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>SMM4 Paket</h3>
+                    <input type="text" asp-for="PacketFourName" value="@Model.PacketFourName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketFourthPrice" value="@Model.PacketFourthPrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text25" value="@Model.Text25" />
+                        <input type="text" asp-for="Text26" value="@Model.Text26" />
+                        <input type="text" asp-for="Text27" value="@Model.Text27" />
+                        <input type="text" asp-for="Text28" value="@Model.Text28" />
+                        <input type="text" asp-for="Text29" value="@Model.Text29" />
+                        <input type="text" asp-for="Text30" value="@Model.Text30" />
+                        <input type="text" asp-for="Text31" value="@Model.Text31" />
+                        <input type="text" asp-for="Text32" value="@Model.Text32" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>SMM5 Paket</h3>
+                    <input type="text" asp-for="PacketFiveName" value="@Model.PacketFiveName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketFivePrice" value="@Model.PacketFivePrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text34" value="@Model.Text34" />
+                        <input type="text" asp-for="Text33" value="@Model.Text33" />
+                        <input type="text" asp-for="Text35" value="@Model.Text35" />
+                        <input type="text" asp-for="Text36" value="@Model.Text36" />
+                        <input type="text" asp-for="Text37" value="@Model.Text37" />
+                        <input type="text" asp-for="Text38" value="@Model.Text38" />
+                        <input type="text" asp-for="Text39" value="@Model.Text39" />
+                        <input type="text" asp-for="Text40" value="@Model.Text40" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>SMM6 Paket</h3>
+                    <input type="text" asp-for="PacketSixName" value="@Model.PacketSixName" />
+                    <h4>Qiymet</h4>
+                    <input type="text" asp-for="PacketSixPrice" value="@Model.PacketSixPrice" />
+                    <div class="form-group">
+                        <input type="text" asp-for="Text41" value="@Model.Text41" />
+                        <input type="text" asp-for="Text42" value="@Model.Text42" />
+                        <input type="text" asp-for="Text43" value="@Model.Text43" />
+                        <input type="text" asp-for="Text44" value="@Model.Text44" />
+                        <input type="text" asp-for="Text45" value="@Model.Text45" />
+                        <input type="text" asp-for="Text46" value="@Model.Text46" />
+                        <input type="text" asp-for="Text47" value="@Model.Text47" />
+                        <input type="text" asp-for="Text48" value="@Model.Text48" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary"><span class="fas fa-save"></span> Yadda Saxla</button>
+                    <a class="btn btn-danger" asp-area="Admin" asp-controller="Home" asp-action="Index"><span class="fas fa-times"></span> Legv Et</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>*@

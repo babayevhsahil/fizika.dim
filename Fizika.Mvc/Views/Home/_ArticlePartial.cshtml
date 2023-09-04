@@ -1,0 +1,37 @@
+﻿@model Fizika.Mvc.Models.HomeViewModel 
+<section class="blog_area pt-120 pb-130">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_title text-center pb-20">
+                    <h3 class="main_title">Bloqlar</h3>
+                    <p>Nihad müəllim Şahbazovun yazdığı bloqlar ilə siz tədrisinizdə istifadə edəbiləcəyiniz faydalı məlumatlar öyrənəcəksiniz</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach (var blog in Model.ArticleListDto.Articles)
+            {
+                <div class="col-lg-4 col-md-7">
+                    <div class="single_blog mt-30">
+                        <div class="blog_image">
+                            <img src="~/img/@blog.ThumbNail" alt="@blog.Title">
+                        </div>
+                        <div class="blog_content">
+                            <span class="date"><span>@blog.CreatedDate.ToShortDateString()</span></span>
+
+                            <div class="blog_content_wrapper">
+                                <ul class="blog_meta">
+                                    <li><a href="#">@blog.User.UserName</a></li>
+                                    <li><a href="#">@blog.CreatedDate.ToShortDateString()</a></li>
+                                </ul>
+                                <h4 class="blog_title"><a asp-action="Detail" asp-controller="Article" asp-route-articleId="@blog.Id">@blog.Title</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

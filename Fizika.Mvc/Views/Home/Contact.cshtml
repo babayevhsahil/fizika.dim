@@ -1,0 +1,124 @@
+﻿@model Fizika.Entities.DTOs.EmailSendDto
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/vendor/toastr/toastr.min.css" rel="stylesheet" />
+
+
+
+<!--====== Page Banner PART START ======-->
+
+<section class="page_banner bg_cover" style="background-image: url(assets/images/about_bg.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner_content text-center">
+                    <h4 class="title">Əlaqə</h4>
+                    <ul class="breadcrumb justify-content-center">
+                        <li><a href="/">Ana Səhifə</a></li>
+                        <li><a class="active" href="/elaqe">Əlaqə</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Page Banner PART ENDS ======-->
+<!--====== CONTACT PART START ======-->
+
+<section class="contact_area pt-80 pb-130">
+    <div class="services_shape_1" style="background-image: url(assets/images/shape/shape-12.html)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact_form mt-40">
+
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="section_title pb-30">
+                                <h3 class="main_title">Mənimlə Əlaqə</h3>
+                                <p>Nihad müəllim ilə əlaqə üçün aşağıdan istifadə edə bilərsiniz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form asp-action="Contact" asp-controller="Home" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single_form">
+                                    <input type="text" id="firstn" asp-for="Name" placeholder="Ad Soyad" required>
+                                </div> <!-- single form -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single_form">
+                                    <input type="email" asp-for="Email" required placeholder="Email">
+                                </div> <!-- single form -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single_form">
+                                    <input type="text" asp-for="Subject" required placeholder="Nömrə">
+                                </div> <!-- single form -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single_form">
+                                    <textarea asp-for="Message" required placeholder="Mesaj"></textarea>
+                                </div> <!-- single form -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single_form">
+                                    <button type="submit" class="main-btn">Göndər</button>
+                                </div> <!-- single form -->
+                            </div>
+                        </div> <!-- row -->
+                    </form>
+                </div> <!-- contact form -->
+            </div>
+            <div class="col-lg-4">
+                <div class="contact_info pt-20">
+                    <ul>
+                        <li>
+                            <div class="single_info d-flex align-items-center mt-30">
+                                <div class="info_icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="info_content media-body">
+                                    <p>Neftçilər M/S yanı Rüstəm Rüstəmov küçəsi</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                        <li>
+                            <div class="single_info d-flex align-items-center mt-30">
+                                <div class="info_icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="info_content media-body">
+                                    <p>+994 50 324 44 17</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                        <li>
+                            <div class="single_info d-flex align-items-center mt-30">
+                                <div class="info_icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="info_content media-body">
+                                    <p>nihadsaxbaz@gmail.com</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                    </ul>
+                </div> <!-- contact info -->
+                <div class="contact_map mt-50">
+                    <div class="gmap_canvas">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.9305001642024!2d49.94129021181133!3d40.410390400689785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403062ff03ee8f1d%3A0xa3342a8984e334a4!2zTmVmdMOnaWzTmXI!5e0!3m2!1saz!2s!4v1638176429865!5m2!1saz!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div> <!-- contact map -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== CONTACT PART ENDS ======-->
+@await Component.InvokeAsync("NToastNotify")

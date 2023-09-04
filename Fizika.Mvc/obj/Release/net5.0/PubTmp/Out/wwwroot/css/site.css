@@ -1,0 +1,16 @@
+﻿.my-image{
+    border-radius:5px;
+    max-height:100px;
+    max-width:100px;
+    border:2px solid #d3d3d3;
+    object-fit:cover;
+    object-position:center center;
+}
+.my-image-table {
+    border-radius: 5px;
+    max-height: 175px;
+    max-width: 75px;
+    border: 2px solid #d3d3d3;
+    object-fit: cover;
+    object-position: center center;
+}

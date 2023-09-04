@@ -1,0 +1,50 @@
+﻿@using Microsoft.Extensions.Options
+@using Fizika.Entities.Concrete
+@inject IOptionsSnapshot<AboutUsPageInfo> AboutPageInfo
+@{
+    var about = AboutPageInfo.Value;
+}
+<section class="about_area_4 pt-80 pb-30">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-6">
+                <div class="about_image_5 mt-50">
+                    <img class="image" src="~/fiziknihad/assets/images/fiziknihad2.jpeg" alt="about">
+
+                    <div class="about_items d-flex flex-wrap" style="right: 23%; top: 5%;">
+                        <div class="single_items">
+                            <div class="items_wrapper">
+                                <img src="~/fiziknihad/assets/images/p-icon-7.png" alt="icon">
+                                <h5 class=items_title>Ən yaxşı fizik 2018</h5>
+                            </div>
+                        </div>
+                        <div class="single_items">
+                            <div class="items_wrapper">
+                                <img src="~/fiziknihad/assets/images/p-icon-8.png" alt="icon">
+                                <h5 class=items_title>100% Qaranti</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6">
+                <div class="about_content_5 text-center mt-45">
+                    <div class="section_title">
+                        <h3 class="main_title">@about.Header</h3>
+                        <p>@about.Content</p>
+                    </div>
+                    <div class="about_info d-sm-flex justify-content-center">
+                        <div class="single_about_info mt-30">
+                            <img src="~/fiziknihad/assets/images/call.png" alt="call">
+                            <p>@about.SeoDescription</p>
+                        </div>
+                        <div class="single_about_info mt-30">
+                            <img src="~/fiziknihad/assets/images/mail.png" alt="mail">
+                            <p>@about.SeoAuthor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
